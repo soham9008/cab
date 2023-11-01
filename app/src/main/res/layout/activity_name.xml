@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NameActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+
+    <ImageView
+        android:layout_marginTop="104dp"
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/taxilogo"
+        android:layout_marginBottom="63dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/yellow"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Name"
+            android:textSize="36sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"/>
+
+        <EditText
+            android:id="@+id/name_input"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="20dp"
+            android:padding="10dp"
+            android:background="@drawable/form_item_backgrond"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:shadowColor="@color/black"
+            android:textColorHighlight="@color/black"
+            android:textColorLink="@color/black"
+            android:hint="Enter Name"
+            android:textColorHint="@color/black"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Mobile No."
+            android:textSize="36sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp"/>
+
+        <EditText
+            android:id="@+id/number_input"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:background="@drawable/form_item_backgrond"
+            android:ems="10"
+            android:inputType="phone"
+            android:hint="Enter Mobile Number"
+            android:textColor="@color/black"
+            android:shadowColor="@color/black"
+            android:textColorHighlight="@color/black"
+            android:textColorLink="@color/black"
+            android:textColorHint="@color/black"/>
+
+
+        <Button
+            android:id="@+id/next_btn_in_Main"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textSize="30sp"
+            android:backgroundTint="@color/black"
+            android:background="@drawable/form_item_backgrond"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

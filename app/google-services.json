@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "808537867027",
+    "project_id": "cab-in-gujarat",
+    "storage_bucket": "cab-in-gujarat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808537867027:android:35557a9905f0265dc150e6",
+        "android_client_info": {
+          "package_name": "topfree.fightgame.cab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXUVzYLUsTtOVEQHyaE7YOwjWouVSRaNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CarActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+
+    <ImageView
+        android:layout_marginTop="104dp"
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/taxilogo"
+        android:layout_marginBottom="63dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/yellow"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Selecte Vahicle "
+            android:textSize="36sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"/>
+
+   <Spinner
+       android:id="@+id/select_trype"
+       android:layout_marginTop="25dp"
+       android:background="@drawable/form_item_backgrond"
+       android:paddingRight="100dp"
+       android:layout_width="match_parent"
+       android:layout_height="60dp"
+       android:paddingLeft="25dp"
+       android:layout_marginRight="25dp"
+       android:layout_marginLeft="25dp"
+       />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Select Type"
+            android:textSize="36sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"/>
+
+        <Spinner
+            android:id="@+id/select_car"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/form_item_backgrond"
+            android:entries="@array/carName"
+            android:paddingLeft="25dp"
+            android:paddingRight="100dp" />
+
+
+        <Button
+            android:id="@+id/next_btn_in_Main"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textSize="30sp"
+            android:backgroundTint="@color/black"
+            android:background="@drawable/form_item_backgrond"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

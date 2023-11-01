@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Cab</string>
+    <string-array name="carSeleaction">
+        <item>Car</item>
+        <item>Mini Bus</item>
+    </string-array>
+
+    <string-array name="carName">
+        <item>Honda City</item>
+        <item>Verna</item>
+        <item>Skoda</item>
+        <item>Audi</item>
+    </string-array>
+
+    <string-array name="tripe">
+        <item>One Way</item>
+        <item> Round Trip</item>
+    </string-array>
+</resources>
