@@ -4,23 +4,14 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Selection.setSelection
 import android.view.View
-import android.widget.AbsSpinner
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.TextView
-import android.widget.Toast
-import androidx.core.view.size
-import com.google.android.material.datepicker.MaterialDatePicker
 import topfree.fightgame.cab.databinding.ActivityDataBinding
 import java.util.Calendar
-import javax.xml.datatype.DatatypeConstants.MONTHS
 
-class DataActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
+class DateActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
-    lateinit var spinner: Spinner
     lateinit var binding : ActivityDataBinding
     lateinit var tripeTrype : String
     lateinit var trip: Array<String>
@@ -44,7 +35,7 @@ class DataActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         val selecteTrypes = binding.selectTrype
         selecteTrypes.adapter = adapter
         selecteTrypes.setSelection(0,false)
-        selecteTrypes.onItemSelectedListener = this@DataActivity
+        selecteTrypes.onItemSelectedListener = this@DateActivity
 
 
         binding.textView.setOnClickListener {
@@ -76,16 +67,16 @@ class DataActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         }
 
         binding.nextBtnInMain.setOnClickListener {
-            val intent = Intent(this, CarActivity::class.java)
-            intent.putExtra("tripe", tripeTrype)
-            intent.putExtra("fromDate", binding.textView.text.toString())
-            intent.putExtra("toDate", binding.textView2.text.toString())
-            startActivity(intent)
+
+            getSharedPreferences("tripe", MODE_PRIVATE).edit().putString("tripe", tripeTrype)
+            getSharedPreferences("fromDate", MODE_PRIVATE).edit().putString("fromDate", binding.textView.text.toString())
+            getSharedPreferences("toDate", MODE_PRIVATE).edit().putString("toDate", binding.textView2.text.toString())
+            startActivity(Intent(this, CarActivity::class.java))
         }
     }
 
     override fun onItemSelected(adapter : AdapterView<*>?, view: View?, position: Int, p3: Long) {
-            tripeTrype = trip[position].toString()
+            tripeTrype = trip[position]
         binding.notVisibleText.visibility = if (tripeTrype == "Round Trip") View.VISIBLE else View.GONE
         binding.notVisiblrLayout.visibility = if (tripeTrype == "Round Trip") View.VISIBLE else View.GONE
 

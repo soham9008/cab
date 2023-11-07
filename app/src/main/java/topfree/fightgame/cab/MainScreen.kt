@@ -54,8 +54,8 @@ lateinit var toName : Array<String>
                 val toInMain = binding.toInput.text.toString()
 
                 val intent = Intent(this, NameActivity::class.java)
-                intent.putExtra("from", fromInMain)
-                intent.putExtra("to", toInMain)
+                  getSharedPreferences("from", MODE_PRIVATE).edit().putString("from", fromInMain)
+                  getSharedPreferences("to", MODE_PRIVATE).edit().putString("to", toInMain)
                 startActivity(intent)
             } 
                 }else {
@@ -73,10 +73,9 @@ lateinit var toName : Array<String>
         adapter.litener(object : MyAdapter.onclickListener{
             override fun onItemClick(position: Int) {
 
-                val intent = Intent(this@MainScreen, NameActivity::class.java)
-                intent.putExtra("from", newArrayList[position].toString())
-                intent.putExtra("to", newArrayList[position].toString())
-                startActivity(intent)
+                getSharedPreferences("from", MODE_PRIVATE).edit().putString("from", newArrayList[position].toString())
+                getSharedPreferences("to", MODE_PRIVATE).edit().putString("to", newArrayList[position].toString())
+                startActivity(Intent(this@MainScreen, NameActivity::class.java))
             }
 
         })

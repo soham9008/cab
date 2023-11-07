@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import topfree.fightgame.cab.databinding.ActivityMainScreenBinding
 import topfree.fightgame.cab.databinding.ActivityNameBinding
 
 class NameActivity : AppCompatActivity() {
@@ -15,13 +14,6 @@ class NameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNameBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
-        val fromData = intent.getStringExtra("from")
-        val toData = intent.getStringExtra("to")
-
-
-
         binding.nextBtnInMain.setOnClickListener {
 
             if (binding.nameInput.text.isNotEmpty()){
@@ -30,12 +22,9 @@ class NameActivity : AppCompatActivity() {
                     val name = binding.nameInput.text.toString()
                     val number = binding.numberInput.text.toString()
 
-                    val intent = Intent(this, DataActivity::class.java)
-                    intent.putExtra("name", name)
-                    intent.putExtra("number", number)
-                    intent.putExtra("from", fromData)
-                    intent.putExtra("to", toData)
-                    startActivity(intent)
+                     getSharedPreferences("name", MODE_PRIVATE).edit().putString("name", name)
+                     getSharedPreferences("Number", MODE_PRIVATE).edit().putString("Number", number)
+                    startActivity(Intent(this, DateActivity::class.java))
                 }
             }else {
                 Toast.makeText(this, "Please Enter Place", Toast.LENGTH_SHORT).show()}
